@@ -1,0 +1,8 @@
+node_modules
+.DS_Store
+.idea
+npm-debug.log
+mochawesome-report
+.vscode
+package-lock.json
+workspace.code-workspace

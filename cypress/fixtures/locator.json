@@ -1,0 +1,12 @@
+{
+  "sampleApp" :{
+    "url": "sampleapp",
+    "userName": "[name=\"UserName\"]",
+    "password": "[name=\"Password\"]",
+    "loginstatus": "#loginstatus",
+    "login": "Log In",
+    "logout": "Log Out"
+  }
+  
+}
+

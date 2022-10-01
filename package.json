@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "description": "Sprite cloud web tests",
+  "main": "index.js",
+  "devDependencies": {
+    "cypress": "^10.9.0",
+    "mocha": "^10.0.0"
+  },
+  "scripts": {
+    "e2e": "cypress open"
+  }
+}
