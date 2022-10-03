@@ -6,4 +6,4 @@ mochawesome-report
 .vscode
 package-lock.json
 workspace.code-workspace
-videos/**
+cypress/videos/**
