@@ -14,13 +14,13 @@ describe('Sample App Testing', () => {
       let password = "pwd";
       let logoutText = "User logged out."
 
-    it('Test for successful login of the sample app', () => {
+    it('Should login to the sample app successfully.', () => {
       cy.login(userName,password)
         .get(sampleApp.loginstatus)
         .should('be.visible').should('have.text', welcomeText);
     });
 
-    it('Test for successful logout from the sample app', () => {
+    it('Should logout to the sample app successfully.', () => {
       cy.login(userName,password)
         .get(sampleApp.loginstatus)
         .should('be.visible').should('have.text', welcomeText)
@@ -33,7 +33,7 @@ describe('Sample App Testing', () => {
   context('Test unsuccessful login scenarios', function () {
       let statusText = "Invalid username/password";
 
-    it('Test for invalid input login to the sample app', () => {
+    it('Should not login to the sample app using invalid user details.', () => {
         cy.clickLogin()
           .get(sampleApp.loginstatus)
           .should('be.visible').should('have.text', statusText)

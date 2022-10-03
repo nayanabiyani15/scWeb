@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import { sampleApp } from "../../fixtures/locator";
+import { sampleApp, mouseOver } from "../fixtures/locator";
 
 
 Cypress.Commands.add("login", (userName, password) => {
@@ -16,3 +16,8 @@ Cypress.Commands.add("clickLogin", () => {
 Cypress.Commands.add("logout", () => {
     cy.contains(sampleApp.logout).click();
 });
+
+Cypress.Commands.add("clickMe", () => {
+    cy.contains(mouseOver.click).click();
+});
+

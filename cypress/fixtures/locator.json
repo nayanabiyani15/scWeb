@@ -6,7 +6,16 @@
     "loginstatus": "#loginstatus",
     "login": "Log In",
     "logout": "Log Out"
+  },
+  "mouseOver":{
+    "url": "mouseover",
+    "click" : "Click me",
+    "clickCount": "#clickCount"
+  },
+  "textInput":{
+    "url":"textinput",
+    "myButton":"#newButtonName",
+    "updateButton": "#updatingButton"
   }
-  
 }
 
