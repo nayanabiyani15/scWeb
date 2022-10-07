@@ -26,6 +26,13 @@ jobs:
           COMMIT_INFO_MESSAGE: '${{ github.event.head_commit.message }}-${{ github.sha }}-${{ github.workflow }}-${{ github.job }}'
           # re-enable PR comment bot
           COMMIT_INFO_SHA: ${{github.event.pull_request.head.sha}}
+ 
+      - name: Upload Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: reports
+          path: cypress/reports/
+
   cypress-parallel-run:
     runs-on: ubuntu-latest
     strategy:
