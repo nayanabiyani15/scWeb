@@ -11,8 +11,14 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v4
+        timeout-minutes: 5
         with:
           record: true
+        env:
+          # pass the Dashboard record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          # pass the project ID from the secrets through environment variable
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
   cypress-parallel-run:
     runs-on: ubuntu-latest
     strategy:
@@ -28,10 +34,13 @@ jobs:
       # and run all Cypress tests
       - name: Cypress parallel run
         uses: cypress-io/github-action@v4
+        timeout-minutes: 5
         with:
           record: true
           parallel: true
-          group: 'Parallel Test run'
+          group: Parallel Cypress Test run
         env:
           # pass the Dashboard record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          # pass the project ID from the secrets through environment variable
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}

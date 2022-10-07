@@ -1,7 +1,8 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: '3ymtkd',
+  // Project ID is set through Github Actions
+  // projectId: '3ymtkd',
   e2e: {
     baseUrl: 'http://www.uitestingplayground.com/',
     viewportWidth: 1366,
