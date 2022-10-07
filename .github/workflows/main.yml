@@ -16,12 +16,16 @@ jobs:
           record: true
           group: Single Cypress Test run
           tag: single-run
-          ci-build-id: '${{ github.event.head_commit.message }}-${{ github.sha }}-${{ github.workflow }}-${{ github.job }}'
+          # ci-build-id: '${{ github.event.head_commit.message }}-${{ github.sha }}-${{ github.workflow }}-${{ github.job }}'
         env:
           # pass the Dashboard record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # pass the project ID from the secrets through environment variable
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+          # overwrite commit message sent to Dashboard
+          COMMIT_INFO_MESSAGE: '${{ github.event.head_commit.message }}-${{ github.sha }}-${{ github.workflow }}-${{ github.job }}'
+          # re-enable PR comment bot
+          COMMIT_INFO_SHA: ${{github.event.pull_request.head.sha}}
   cypress-parallel-run:
     runs-on: ubuntu-latest
     strategy:
@@ -43,9 +47,13 @@ jobs:
           parallel: true
           group: Parallel Cypress Test run
           tag: parallel-run
-          ci-build-id: '${{ github.event.head_commit.message }}-${{ github.sha }}-${{ github.workflow }}-${{ github.job }}'
+          # ci-build-id: '${{ github.event.head_commit.message }}-${{ github.sha }}-${{ github.workflow }}-${{ github.job }}'
         env:
           # pass the Dashboard record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # pass the project ID from the secrets through environment variable
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+          # overwrite commit message sent to Dashboard
+          COMMIT_INFO_MESSAGE: '${{ github.event.head_commit.message }}-${{ github.sha }}-${{ github.workflow }}-${{ github.job }}'
+          # re-enable PR comment bot
+          COMMIT_INFO_SHA: ${{github.event.pull_request.head.sha}}
