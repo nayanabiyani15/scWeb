@@ -4,7 +4,6 @@ node_modules
 npm-debug.log
 mochawesome-report
 .vscode
-package-lock.json
 workspace.code-workspace
 cypress/videos/**
 cypress/results/**
