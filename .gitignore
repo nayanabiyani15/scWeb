@@ -7,3 +7,6 @@ mochawesome-report
 package-lock.json
 workspace.code-workspace
 cypress/videos/**
+cypress/results/**
+cypress/reports/**
+cypress/downloads/**
