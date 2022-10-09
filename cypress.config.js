@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: '3ymtkd',
   // Project ID is set through Github Actions
   // projectId: '3ymtkd',
   e2e: {
@@ -23,11 +24,18 @@ module.exports = defineConfig({
         });
       };
     },
-    "reporter": "junit",
+    "reporter": "cypress-multi-reporters",
     "reporterOptions": {
         "reportDir": "cypress/reports",
-        "mochaFile": "cypress/reports/reports-[hash].xml",
-        "toConsole": true
+        "reporterEnabled": "cypress-mochawesome-reporter, mocha-junit-reporter",
+        "mochaJunitReporterReporterOptions": {
+          "mochaFile": "cypress/reports/junit/reports-[hash].xml",
+          "toConsole": true
+        },
+        "cypressMochawesomeReporterReporterOptions": {
+          "charts": true,
+          "reportPageTitle": "custom-title"
+        }
       }
   },
 });
